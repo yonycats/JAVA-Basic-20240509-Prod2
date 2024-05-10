@@ -33,7 +33,12 @@ public class MemberDao {
 	}
 	
 
-
+	public void sign(List<Object> param) {
+		String sql = " INSERT INTO JAVA_MEMBER (MEM_NO, ID, PASS, NAME, DELYN, ROLE)\r\n" + 
+				"VALUES ((SELECT NVL(MAX(MEM_NO), 0)+1 FROM JAVA_MEMBER), ?, ?, ?, 'N', 1)";
+		
+		jdbc.update(sql, param);
+	}
 	
 	
 	

@@ -23,6 +23,7 @@ public class MemberService {
 	
 	MemberDao memberDao = MemberDao.getInstance();
 	
+	
 	public boolean login(List<Object> param, int role) {
 		
 		// memberDao.login 메서드로 로그인 시도
@@ -41,6 +42,12 @@ public class MemberService {
 		}
 		
 		return true;
+	}
+	
+	
+	public void sign(List<Object> param) {
+		memberDao.sign(param);
+		
 	}
 	
 	
